@@ -1,23 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const counterNum = useSelector((store)=>store.CounterReducer)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <h1>Increment/Decrement counter app</h1>
+       <h3>using React & Redux</h3>
+      <div className='buttonDiv'><button className='counterButton'>-</button><span className='counter'>{counterNum}</span><button className='counterButton'>+</button> <button className='resetButton'>Reset</button></div>
     </div>
   );
 }
